@@ -1,0 +1,217 @@
+.formulario1 {
+
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px #28ca0b ;
+     position: center;
+    
+ }
+ 
+.imgs{
+     background-color: #fff;
+    
+ }
+
+ body{
+    background-image: url("../assets/img/cicty.jpg");
+   
+    background-size: 100% 100%;
+    
+}
+
+
+
+.verde{
+
+    color: rgb(113, 180, 83);
+}
+
+.gris{
+
+    color: rgb(89, 89, 91);
+
+}
+
+.btn-verde{
+
+    background-color: rgb(113, 180, 83);
+    border-bottom-right-radius:30px ;
+    border-top-left-radius: 30px;
+    box-shadow: 5px 0px 0px 0px rgb(97, 105, 96);
+  
+}
+.btn-verde:hover{
+
+    background-color:rgb(99, 250, 73) ;
+    
+}
+.btn-rojo{
+
+    background-color: rgb(243, 79, 3);
+    border-bottom-right-radius:30px ;
+    border-top-left-radius: 30px;
+    box-shadow: 5px 0px 0px 0px rgb(97, 105, 96);
+  
+}
+.btn-rojo:hover{
+
+    background-color:rgba(248, 8, 8, 0.959) ;
+    
+}
+
+
+.btn-gris{
+
+    background-color: rgb(89, 89, 91);
+    border-bottom-right-radius:30px ;
+    border-top-left-radius: 30px;
+    box-shadow: 5px 0px 0px 0px rgb(113, 180, 83)
+  
+}
+
+
+.tabla {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+    table th, table td {
+        overflow: hidden;
+    }
+
+
+
+
+.titulos{
+    font-family: energym;
+}
+
+.fverde{
+    background-color: rgb(113, 180, 83);
+}
+
+
+.texto{
+
+    font-family: Arial, Helvetica, sans-serif;
+   font-size:12px;
+   font-weight: bolder;
+}
+.textop{
+
+    font-family: Arial, Helvetica, sans-serif;
+   font-size:10px;
+   font-weight: bolder;
+}
+
+.textomp{
+
+    font-family: Arial, Helvetica, sans-serif;
+   font-size:8px;
+   /* font-weight: bolder; */
+}
+.fenergy{
+    font-family: energym;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -200px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+/* 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+} */
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.9s;
+}
+
+#sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background:  rgb(113, 180, 83);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #fff;
+   
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid  rgb(113, 180, 83);
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #000000;
+    background: rgb(99, 250, 73);
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: rgb(99, 250, 73);
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: rgb(113, 180, 83);
+}

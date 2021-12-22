@@ -1,0 +1,59 @@
+.formulario1 {
+
+   border-radius: 10px;
+   box-shadow: 0px 0px 10px 0px #28ca0b ;
+    position: center;
+   
+}
+
+body {
+    background-image: url("../assets/img/cicty.jpg");
+  
+    background-size: 100% auto;
+}
+
+
+
+.imgs{
+    background-image: url("../assets/img/Logo.PNG");
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+}
+
+.verde{
+
+    color: rgb(113, 180, 83);
+}
+
+
+
+.btn-verde{
+
+    background-color: rgb(113, 180, 83);
+    border-bottom-right-radius:30px ;
+    border-top-left-radius: 30px;
+    box-shadow: 5px 0px 0px 0px rgb(97, 105, 96);
+  
+}
+
+
+.btn-gris{
+
+    background-color: rgb(89, 89, 91);
+    border-bottom-right-radius:30px ;
+    border-top-left-radius: 30px;
+    box-shadow: 5px 0px 0px 0px rgb(113, 180, 83)
+  
+}
+
+
+
+.btn-verde:hover{
+
+    background-color:rgb(99, 250, 73) ;
+    
+}
+
+.titulos{
+    font-family: energym;
+}
