@@ -10,14 +10,15 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width device.width, initial-scale=1">
-    <title>Modulo interno Energy Master</title>
+    <meta name="viewport" content=" initial-scale=1">
+    <title>Solvo</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <link rel="stylesheet" href="css\login.css">
-    <link rel="shortcut icon" href="assets/img/titleem.ico">
+    <link rel="shortcut icon" href="assets/img/solvoico.ico">
     <link rel="stylesheet" href="css/fuente.css">
     <script src="js/funciones.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
+   
 
 <script src="js/popper.js"></script>
 <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -44,7 +45,7 @@ session_start();
 
 <!-- Outer Row -->
 
-            <h2 class="text-center verde titulos">Modulo interno Energy Master</h2>
+            <h2 class="text-center verde titulos">Modulo interno Solvo IT</h2>
 
 <div class="row justify-content-center ">
 

@@ -26,15 +26,25 @@ if (isset($_POST['btnlogin'])){
  
    if($exe->num_rows>0 and $res[0]!='error'){
 
-    print_r('consulta correcta');
+   switch ($res[1]) {
+       case '1':
+        $_SESSION["usuar"]=$res[0];
+        $_SESSION["perf"]='admin';
+        $_SESSION["logged"]=1;
+        echo "1";
 
+        // print_r($res[0]);
+        # code...
+        break;
+       
+       default:
+           # code...
+          
+             }
 
-
-
-  
- 
-
-	}
+	}   else {
+        print_r('error en al consulta');
+    }
 }
 
 ?>

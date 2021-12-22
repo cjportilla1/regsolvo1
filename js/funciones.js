@@ -15,11 +15,12 @@ function loginUser() {
 		// Parseo el resultado para volverlo entero:
 		this.res = parseInt(res);
 
-		console.log(res);
+		// console.log(res);
 		if (this.res === 1) {
 
 			// Si al volver entero el resultado es 1, entonces se va a mi página de main:
-
+			// $("#alerta").html(res);
+			console.log(res);
 			window.location = "vista/intuser.php";
 		} else {
 

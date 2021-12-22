@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 
 session_start();
 
@@ -202,11 +202,11 @@ function habilCont(campoCantidad)
             </nav>
            
             <?php     
-                if ($_SESSION["perf"]=='admin') {
+                if ($_SESSION["perf"]='admin') {
                     include("userintadm.inc");
 
                     # code...
-                }elseif ($_SESSION["perf"]=='visualizacion') {
+                }elseif ($_SESSION["perf"]=='0') {
                     include("intuservisual.inc");
                     # code...
                 }elseif ($_SESSION["perf"]=='camilo') {
