@@ -1,9 +1,18 @@
 <?php
-// error_reporting(0);
+error_reporting(0);
 
 session_start();
 
 include("conexion.php");
+
+
+$con = New Conexion();
+$createcon=$con->conectar();
+$createcon->set_charset("utf8");
+
+
+// print_r($_SESSION);
+// print_r($_POST);
 
 
 if (empty($_SESSION["logged"])) {
@@ -21,6 +30,7 @@ if (empty($_SESSION["logged"])) {
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible">
 
     <title>Usuarios internos empresas</title>
@@ -29,11 +39,12 @@ if (empty($_SESSION["logged"])) {
     <link rel="stylesheet" href="../css/formulario.css">
     
     <link rel="stylesheet" href="../css/fuente.css">
-    <link rel="shortcut icon" href="../assets/img/titleem.ico">
+    <link rel="shortcut icon" href="../assets/img/solvoico.ico">
     <link rel="stylesheet" href="../assets/fontawesome-free-5.15.1-web/css/all.css">
    
     
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../assets/DataTables-1.10.22/css/jquery.dataTables.css"/>
 <link rel="stylesheet" type="text/css" href="../assets/Buttons-1.6.4/css/buttons.dataTables.css"/>
 <link rel="stylesheet" type="text/css" href="../assets/Responsive-2.2.6/css/responsive.dataTables.css"/>
@@ -170,7 +181,7 @@ function habilCont(campoCantidad)
      $("form input[type=date]").each(function() { this.value = '' });
      $("form input[type=email]").each(function() { this.value = '' });
      $("form input[type=password]").each(function() { this.value = '' });
-     $_POST=array();
+    //  $_POST=array();
 }
 </script>
 
@@ -202,15 +213,15 @@ function habilCont(campoCantidad)
             </nav>
            
             <?php     
-                if ($_SESSION["perf"]='admin') {
+                if ($_SESSION["perf"]=='admin') {
                     include("userintadm.inc");
 
                     # code...
-                }elseif ($_SESSION["perf"]=='0') {
+                }elseif ($_SESSION["perf"]=='supervisor') {
                     include("intuservisual.inc");
                     # code...
-                }elseif ($_SESSION["perf"]=='camilo') {
-                    include("userintadm.inc");
+                }elseif ($_SESSION["perf"]=='colaborador') {
+                    include("intuservisual.inc");
                     # code...
                 }
 

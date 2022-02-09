@@ -31,7 +31,7 @@ if (empty($_SESSION["logged"])) {
     <link rel="stylesheet" href="../css/fuente.css">
     <link rel="shortcut icon" href="../assets/img/titleem.ico">
     <link rel="stylesheet" href="../assets/fontawesome-free-5.15.1-web/css/all.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="../assets/DataTables-1.10.22/css/jquery.dataTables.css"/>
 <link rel="stylesheet" type="text/css" href="../assets/Buttons-1.6.4/css/buttons.dataTables.css"/>
 <link rel="stylesheet" type="text/css" href="../assets/Responsive-2.2.6/css/responsive.dataTables.css"/>

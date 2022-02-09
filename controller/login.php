@@ -29,6 +29,8 @@ if (isset($_POST['btnlogin'])){
    switch ($res[1]) {
        case '1':
         $_SESSION["usuar"]=$res[0];
+        $_SESSION["usnombre"]=$res[2];
+        $_SESSION["usapell"]=$res[3];
         $_SESSION["perf"]='admin';
         $_SESSION["logged"]=1;
         echo "1";
@@ -36,6 +38,24 @@ if (isset($_POST['btnlogin'])){
         // print_r($res[0]);
         # code...
         break;
+
+        case '2':
+            $_SESSION["usuar"]=$res[0];
+            $_SESSION["usnombre"]=$res[2];
+            $_SESSION["usapell"]=$res[3];
+            $_SESSION["perf"]='supervisor';
+            $_SESSION["logged"]=1;
+            echo "1";
+    
+            break;
+
+            case '3':
+                $_SESSION["usuar"]=$res[0];
+                $_SESSION["usnombre"]=$res[2];
+                $_SESSION["usapell"]=$res[3];
+                $_SESSION["perf"]='colaborador';
+                $_SESSION["logged"]=1;
+                echo "1";
        
        default:
            # code...

@@ -1,7 +1,7 @@
 .formulario1 {
 
     border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px #28ca0b ;
+    box-shadow: 0px 0px 5px 0px rgb(5, 207, 243) ;
      position: center;
     
  }
@@ -18,11 +18,16 @@
     
 }
 
+.azul {
+
+    color:rgb(5, 207, 243);
+}
+
 
 
 .verde{
 
-    color: rgb(113, 180, 83);
+    color: rgb(5, 207, 243);
 }
 
 .gris{
@@ -33,7 +38,7 @@
 
 .btn-verde{
 
-    background-color: rgb(113, 180, 83);
+    background-color: rgb(5, 207, 243);
     border-bottom-right-radius:30px ;
     border-top-left-radius: 30px;
     box-shadow: 5px 0px 0px 0px rgb(97, 105, 96);
@@ -82,11 +87,11 @@
 
 
 .titulos{
-    font-family: energym;
+    font-family: designiomedium;
 }
 
 .fverde{
-    background-color: rgb(113, 180, 83);
+    background-color: rgb(5, 207, 243);
 }
 
 
@@ -109,8 +114,8 @@
    font-size:8px;
    /* font-weight: bolder; */
 }
-.fenergy{
-    font-family: energym;
+.fsolvo{
+    font-family: designiomedium;
 }
 
 .wrapper {
@@ -170,12 +175,12 @@ p {
 a, a:hover, a:focus {
     color: inherit;
     text-decoration: none;
-    transition: all 0.9s;
+    transition: all 0.7s;
 }
 
 #sidebar {
     /* don't forget to add all the previously mentioned styles here too */
-    background:  rgb(113, 180, 83);
+    background:  rgb(5, 207, 243);
     color: #fff;
     transition: all 0.3s;
 }
@@ -188,7 +193,7 @@ a, a:hover, a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid  rgb(113, 180, 83);
+    border-bottom: 1px solid  rgb(5, 207, 243);
 }
 
 #sidebar ul p {
@@ -203,15 +208,15 @@ a, a:hover, a:focus {
 }
 #sidebar ul li a:hover {
     color: #000000;
-    background: rgb(99, 250, 73);
+    background: rgb(5, 207, 243);
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: rgb(99, 250, 73);
+    background: rgb(231, 111, 16);
 }
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: rgb(113, 180, 83);
+    background: rgb(5, 207, 243);
 }

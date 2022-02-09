@@ -14,13 +14,14 @@ function loginUser() {
 	}).done(function (res) {
 		// Parseo el resultado para volverlo entero:
 		this.res = parseInt(res);
+		// alert(res);
 
 		// console.log(res);
 		if (this.res === 1) {
 
 			// Si al volver entero el resultado es 1, entonces se va a mi página de main:
-			// $("#alerta").html(res);
-			console.log(res);
+		
+			// console.log(res);
 			window.location = "vista/intuser.php";
 		} else {
 
@@ -34,6 +35,8 @@ function loginUser() {
 		}
 	});
 }
+
+
 
 
 //funcion para confirmar la eliminacion de registros
@@ -56,6 +59,13 @@ function confirmDeleteUint(id) {
 		// si es cierta la confirmacion  manda sumada en la url por metodo get el id seleccionado para eliminar del registro
 		window.location.href = "intuser.php?eliminar&id=" + id;
 		setTimeout(recargar, 1500);
+		alert("regresando a la pagina principal")
+		// var t =confirm("Se ha eliminado el registro regresando...");
+		// if (t=true){
+		
+		window.location.href="intuser.php";
+
+		// }
 	}
 }
 
@@ -142,7 +152,7 @@ function crudcomer(btnSaveUser) {
 
 			$("#alerta").html(res);
 			// se ejecuta la funcion recargar definida mas abajo para actualizar la pagina 
-			setTimeout(regarcar, 2500);
+			setTimeout(recargar, 2500);
 		})
 }
 
@@ -152,14 +162,14 @@ function crudcomer(btnSaveUser) {
 
 // Función de guardar ó actualizar datos:
 
-function cruduser(btnSaveUser) {
+function cruduserit(btnSaveUser) {
 	// se guarda en una variable los datos que vienen del formulario con id señalizado en la vista del modulo de registro de usuarios
 	var datoForm = $("#formRegistroUser").serialize();
 	// se le suma una variable post btnopcion mas la accion definida en el boton en la vista del formulario ya sea registrar o actualizar
 	var datoReg = datoForm + '&btnopcion=' + btnSaveUser;
 	// se puede usar un alert para imprimir en pantalla una ventana con los datos que se estan enviando
 	//  por post para comprobar que van la cantidad y llenos con los datos correspondientes
-	// alert (datoReg);
+	alert (datoReg);
 	console.log();
 	// Control asicronico:
 	$.ajax({
@@ -175,7 +185,7 @@ function cruduser(btnSaveUser) {
 
 			$("#alerta").html(res);
 			// se ejecuta la funcion recargar definida mas abajo para actualizar la pagina 
-			setTimeout(regarcar, 2500);
+			setTimeout(recargar, 2500);
 		})
 }
 
@@ -203,7 +213,7 @@ function createnuclien(btnSaveUser) {
 
 			$("#alerta").html(res);
 			// se ejecuta la funcion recargar definida mas abajo para actualizar la pagina 
-			setTimeout(regarcar, 2500);
+			setTimeout(recargar, 2500);
 		})
 }
 
@@ -213,7 +223,7 @@ function createnuclien(btnSaveUser) {
 
 
 
-function regarcar() {
+function recargar() {
 
 	location.reload();
 

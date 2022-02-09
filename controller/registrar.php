@@ -1,12 +1,16 @@
 <?php
+include("../vista/conexion.php");
+   $con = New Conexion();
+   $createcon=$con->conectar();
+   $createcon->set_charset("utf8");
 
 
 
-require('../vista/conexion.php');
 // $sql = "SELECT * FROM usuario";
 // $exe = $conectar->query($sql);
 
 // error_reporting(0);
+
 
 # code...
 if ($_POST['btnopcion'] == 'guardar') {
@@ -149,49 +153,44 @@ if ($_POST['btnopcion'] == 'actualizar') {
 }
 
 
-if ($_POST['btnopcion'] == 'guardaruint') {
+if ($_POST['btnopcion'] == 'guardaruit') {
 
 
 	if (!isset($_POST["contrasena"])) {
 		echo "la contraseña debe estar habilitada para poder registrar o actualizar!";
 	} else {
 		# code...
-		$razons = trim($_POST['razon']);
-		$usuarioint = trim($_POST['usuarioint']);
-		$contra = trim($_POST['contrasena']);
-		$idrol = trim($_POST['idrole']);
+		$usuit = trim($_POST['nameit']);
+		$apeit = trim($_POST['lastnameit']);
+		$corr = trim($_POST['correouit']);
+		$contrasena = trim($_POST['contrasena']);
+		$rol=trim($_POST['idrol']);
 
 
 
 
-		$sql = "exec sp_reguint ?,?,?,?";
-		$datos = array(
-			array($razons, SQLSRV_PARAM_IN),
-			array($usuarioint, SQLSRV_PARAM_IN),
-			array($contra, SQLSRV_PARAM_IN),
-			array($idrol, SQLSRV_PARAM_IN),
-
-		);
+		$sql = "call ins_user ('$usuit','$apeit','$corr','$contrasena','$rol')";
+		
 
 
 
 
 		// $exe = $con->query($sql);
-		$res = sqlsrv_query($con, $sql, $datos);
+		$exe = $createcon->query($sql);
 
-		// 		print_r($_POST);
+			// echo gettype($exe);
+			// echo $exe;
 		// print_r(sqlsrv_errors());
 
-		while ($row = sqlsrv_fetch_array($res)) {
+		if ($exe>0 ) {
+// echo gettype($exe);
 
+		echo "exito al guardar";
+			
+		}else{
 
+			echo "error al guardar";
 
-			if ($row[0] != 'error') {
-
-				echo "datos guardados correctamente";
-			} else {
-				echo "error al guardar,campos vacios o registro repetido";
-			}
 		}
 	}
 }
@@ -203,45 +202,38 @@ if ($_POST['btnopcion'] == 'actualizaruint') {
 		echo "la contraseña debe estar habilitada para poder registrar o actualizar!";
 	} else {
 
-		$iduint = trim($_POST['iduint']);
-		$razons = trim($_POST['razon']);
-		$usuarioint = trim($_POST['usuarioint']);
-		$contra = trim($_POST['contrasena']);
-		$idrol = trim($_POST['idrole']);
+		$idus=trim($_POST['iduint']);
+		$usuit = trim($_POST['nameit']);
+		$apeit = trim($_POST['lastnameit']);
+		$corr = trim($_POST['correouit']);
+		$contrasena = trim($_POST['contrasena']);
+		$rol=trim($_POST['idrol']);
+	
 
 
 
 
-		$sql = "exec sp_actusint ?,?,?,?,?";
-		$datos = array(
-			array($iduint, SQLSRV_PARAM_IN),
-			array($razons, SQLSRV_PARAM_IN),
-			array($usuarioint, SQLSRV_PARAM_IN),
-			array($contra, SQLSRV_PARAM_IN),
-			array($idrol, SQLSRV_PARAM_IN),
-
-		);
+		$sql = "call up_user ('$idus','$usuit','$apeit','$corr','$contrasena','$rol')";
+	
 
 
 
 
 		// $exe = $con->query($sql);
-		$res = sqlsrv_query($con, $sql, $datos);
+		$exe = $createcon->query($sql);
 
 		// 		print_r($_POST);
 		// print_r(sqlsrv_errors());
-
-		while ($row = sqlsrv_fetch_array($res)) {
-
-
-
-			if ($row[0] != 'error') {
-
-				echo "datos actualizados correctamente";
-			} else {
-				echo "error al actualizar";
-			}
-		}
+		if ($exe>0 ) {
+			// echo gettype($exe);
+			
+					echo "exito al actualizar";
+						
+					}else{
+			
+						echo "error al actualizar";
+			
+					}
 	}
 }
 

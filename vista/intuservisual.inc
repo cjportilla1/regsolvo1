@@ -1,75 +1,86 @@
-   <div class="container mt-5  ">
-  
-                <div class="container formulario1 imgs p-5 text-center" >
-                <h1 class="verde titulos ">Usuarios internos empresas</h1>
-                
-               
-                    <table id="tusuarios" class="responsive  table-striped " width="100%" height="100%">
-                        <thead class=" ">
-                            <tr class=" text-center fverde   text-light">
-                              
-                                <th>Razon social</th>
-                                <th>Usuario</th>
-                                <th>Contraseña</th>
-                                <th>Rol</th>
+<div class="container mt-5  ">
+    <div class="container formulario1 imgs p-5">
+        <table id="tusuarios" class="  table-striped " width="100%" height="100%">
+
+            <thead class=" ">
+                <tr class=" text-center fverde  fsolvo text-light">
+                  
+                    <th class="titulos">Nombre</th>
+                    <th class="titulos">Apellido</th>
+                    <th class="titulos">Mail</th>
+                  
+                    <th class="titulos">Rol</th>
 
 
 
 
-                            </tr>
-                        </thead>
-                        <tbody>
+                </tr>
+            </thead>
+            <tbody>
 
 
-                            <?php
+                <?php
 
-                         
+                if (isset($_GET['eliminar'])) {
 
-
-                            $sql = "	
-                        select iduint,razons,usuarioint,passuint,roluint,descrol from Usersint ui 
-                            inner join Roluint on roluint=idroluint";
+                    $sqlDelete = "call del_us(" . $_GET['id'] . ")";
+                    $res = $createcon->query($sqlDelete);
 
 
-                            $res = sqlsrv_query($con, $sql);
+                    // while ($fila = $res->fetch_array()) {
+                    $fila = $res->fetch_row();
+
+                    // print_r($fila);
+
+                    // if ($row[0]=1) {
+                    //     echo "<label class='text-danger' >usuario eliminado correctamente</label>";
+                    // } else {
+                    //     echo "<label class='text-danger' >usuario admin,no se puede eliminar</label>";
+                    // }
+                    // }
+                }
+
+
+                $sql = "call mostr_usrs";
+
+
+                $exe = $createcon->query($sql);
 
 
 
 
-                            while ($row = sqlsrv_fetch_array($res, SQLSRV_FETCH_BOTH)) {
-                                echo "<tr class='text-center texto ' >
-                    
+                while ($row = $exe->fetch_array()) {
+
+                    if ($row[5] == 1) {
+                        $showrol = "Administrador";
+                    } else {
+                        $showrol = "visual";
+                    }
+                    echo "<tr class='text-center texto ' >
+                       
                      
                        
-                            <td>" . $row["razons"] . "</td>
-                            <td>" . $row["usuarioint"] . "</td>
-                            <td>" . $row["passuint"] . "</td>
+                            <td>" . $row[1] . "</td>
+                            <td>" . $row[2] . "</td>
+                         
                            
-                            <td>" . $row["descrol"] . "</td>
+                            <td>" . $row[3] . "</td>
+                           
+                            <td>" . $showrol . "</td>
                          
                             </tr>";
-
-
-
-                                // echo $row["nombre"];
-                            }
+                }
 
 
 
 
-                            ?>
+                ?>
+
+    </div>
 
 
-
-                </div>
-
-
-                </tbody>
+    </tbody>
 
 
-                </table>
-                <div class="form-row-12">
-                        <mark> <a href="cerrarsesion.php" class="text-danger btn btn-warning font-size:1rem">Cerrar sesion</a> </mark>
-
-                    </div>
-            </div>
+    </table>
+</div>

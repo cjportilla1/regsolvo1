@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Ubidots' => array($vendorDir . '/ubidots/ubidots/src'),
-    'Requests' => array($vendorDir . '/rmccue/requests/library'),
 );
