@@ -68,6 +68,23 @@ function confirmDeleteUint(id) {
 		// }
 	}
 }
+function confirmDeleteqareg(id) {
+	// preguntamos cn un confirm si desea completar la accion
+	var r = confirm("¿Estas seguro de eliminar este registro?");
+
+	if (r == true) {
+		// si es cierta la confirmacion  manda sumada en la url por metodo get el id seleccionado para eliminar del registro
+		window.location.href = "qareg.php?eliminar&id=" + id;
+		setTimeout(recargar, 1500);
+		alert("regresando a la pagina principal")
+		// var t =confirm("Se ha eliminado el registro regresando...");
+		// if (t=true){
+		
+		window.location.href="qareg.php";
+
+		// }
+	}
+}
 
 
 function confirmDeleteTrBot(id) {
@@ -150,7 +167,7 @@ function crudcomer(btnSaveUser) {
 		.done(function (res) {
 			console.log(res);
 
-			$("#alerta").html(res);
+			// $("#alerta").html(res);
 			// se ejecuta la funcion recargar definida mas abajo para actualizar la pagina 
 			setTimeout(recargar, 2500);
 		})
@@ -169,7 +186,7 @@ function cruduserit(btnSaveUser) {
 	var datoReg = datoForm + '&btnopcion=' + btnSaveUser;
 	// se puede usar un alert para imprimir en pantalla una ventana con los datos que se estan enviando
 	//  por post para comprobar que van la cantidad y llenos con los datos correspondientes
-	alert (datoReg);
+	// alert (datoReg);
 	console.log();
 	// Control asicronico:
 	$.ajax({
@@ -183,7 +200,7 @@ function cruduserit(btnSaveUser) {
 		.done(function (res) {
 			console.log(res);
 
-			$("#alerta").html(res);
+			// $("#alerta").html(res);
 			// se ejecuta la funcion recargar definida mas abajo para actualizar la pagina 
 			setTimeout(recargar, 2500);
 		})
@@ -211,7 +228,7 @@ function createnuclien(btnSaveUser) {
 		.done(function (res) {
 			console.log(res);
 
-			$("#alerta").html(res);
+			// $("#alerta").html(res);
 			// se ejecuta la funcion recargar definida mas abajo para actualizar la pagina 
 			setTimeout(recargar, 2500);
 		})

@@ -73,12 +73,15 @@
 
         <div class="form-row mb-3">
 
-            <div class="col-4">
+            <div class="col">
+
+            <label for=""><span class="font-weight-bold titulos">SOL ID</span></label>
+                <input name="solID" title="Ingrese el ID proporcionado por solvo" type="text" class="form-control" id="nombreid" placeholder="Solvo ID" minlength="3" maxlength="60" value="<?php echo $_POST["solid"]; ?>">
 
             </div>
 
             <div class="form-group col">
-                <label for="inputca"><span class="font-weight-bold">Rol</span></label>
+                <label for="inputca"><span class="font-weight-bold titulos">Rol</span></label>
                 <select name="idrol" id="inputcargo" class="form-control">
                     <option value="" disabled> </option>
                     <?php
@@ -147,9 +150,7 @@
                 </select>
             </div>
 
-            <div class="col-4">
-
-            </div>
+           
 
 
 
@@ -228,8 +229,10 @@
                     <th class="titulos">Nombre</th>
                     <th class="titulos">Apellido</th>
                     <th class="titulos">Mail</th>
-                    <th class="titulos">Pass</th>
+                    
                     <th class="titulos">Rol</th>
+                    <th class="titulos">SolID</th>
+                    <th class="titulos">Ultimo ingreso</th>
 
 
 
@@ -299,6 +302,7 @@
                        <input type='hidden' name='correouit' value='" . $row[3] . "'>
                        <input type='hidden' name='contrasena' value='" . $row[4] . "'>
                        <input type='hidden' name='idrol' value='" . $row[5] . "'>
+                       <input type='hidden' name='solid' value='" . $row[6] . "'>
                        
                    
 
@@ -312,8 +316,11 @@
                          
                            
                             <td>" . $row[3] . "</td>
-                            <td>" . $row[4] . "</td>
+                         
                             <td>" . $showrol . "</td>
+                            <td>" .$row[6] . "</td>
+                            <td>" . $row[7] . "</td>
+
                          
                             </tr>";
                 }

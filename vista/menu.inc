@@ -11,11 +11,9 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle fsolvo"><i class="fas fa-industry"> Menú </i></a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="assets.php"><i class="fas fa-key"></i class="titulos"> Assets </a>
+                            <a href="qareg.php"><i class="fas fa-key"></i class="titulos"> Registros QA </a>
                         </li>
-                        <li>
-                            <a href="comerc.php"><i class="fas fa-industry"></i class="titulos"> Comercializadores   </a>
-                        </li>
+                       
                      
 
                     
@@ -27,7 +25,7 @@
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle fsolvo"><i class="fas fa-users"></i>  Colaboradores </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="formulario.php"><i class="fas fa-user"></i> <i class="fas fa-list"></i class="titulos">  Datos personales colaboradores</a>
+                            <a href="intuser.php"><i class="fas fa-user"></i> <i class="fas fa-list"></i class="titulos">  Datos personales colaboradores</a>
                         </li>
                       
                     </ul>

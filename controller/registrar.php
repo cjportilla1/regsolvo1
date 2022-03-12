@@ -165,11 +165,12 @@ if ($_POST['btnopcion'] == 'guardaruit') {
 		$corr = trim($_POST['correouit']);
 		$contrasena = trim($_POST['contrasena']);
 		$rol=trim($_POST['idrol']);
+		$solvid=trim($_POST['solID']);
 
 
 
 
-		$sql = "call ins_user ('$usuit','$apeit','$corr','$contrasena','$rol')";
+		$sql = "call ins_user ('$usuit','$apeit','$corr','$contrasena','$rol','$solvid')";
 		
 
 
@@ -194,6 +195,85 @@ if ($_POST['btnopcion'] == 'guardaruit') {
 		}
 	}
 }
+
+if ($_POST['btnopcion'] == 'saveqareg') {
+
+
+		# code...
+		$fechqareg = trim($_POST['qatimefe']);
+		$interprid = trim($_POST['interpidfe']);
+		$nameofint = trim($_POST['nameinterp']);
+		$nombretl = trim($_POST['tlname']);
+		$numcalif = trim($_POST['numcal']);
+		$detqa=trim($_POST['detallesqa']);
+
+
+
+
+		$sql = "call ins_newqareg ('$fechqareg','$interprid','$nameofint','$nombretl','$numcalif','$detqa')";
+		
+
+
+
+
+		// $exe = $con->query($sql);
+		$exe = $createcon->query($sql);
+
+			// echo gettype($exe);
+			// echo $exe;
+		// print_r(sqlsrv_errors());
+
+		if ($exe>0 ) {
+// echo gettype($exe);
+
+		echo "exito al guardar";
+			
+		}else{
+
+			echo "error al guardar";
+
+		}
+	
+}
+if ($_POST['btnopcion'] == 'upqareg') {
+
+	$idqareg=trim($_POST['idqaregis']);
+	$fechqareg = trim($_POST['qatimefe']);
+	$interprid = trim($_POST['interpidfe']);
+	$nameofint = trim($_POST['nameinterp']);
+	$nombretl = trim($_POST['tlname']);
+	$numcalif = trim($_POST['numcal']);
+	$detqa=trim($_POST['detallesqa']);
+
+
+
+
+	$sql = "call up_qareg ('$idqareg','$fechqareg','$interprid','$nameofint','$nombretl','$numcalif','$detqa')";
+	
+
+
+
+
+	// $exe = $con->query($sql);
+	$exe = $createcon->query($sql);
+
+		// echo gettype($exe);
+		// echo $exe;
+	// print_r(sqlsrv_errors());
+
+	if ($exe>0 ) {
+// echo gettype($exe);
+
+	echo "exito al actualizar";
+		
+	}else{
+
+		echo "error al actualizar";
+
+	}
+
+}
+
 
 
 if ($_POST['btnopcion'] == 'actualizaruint') {
