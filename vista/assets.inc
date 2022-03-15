@@ -240,7 +240,7 @@
                     <th class="titulos">Ubicacion</th>
                     <th class="titulos">Usuario</th>
                     <th class="titulos">Campaña</th>
-                    <th class="titulos">Actualizado por:</th>
+                    <th class="titulos">ultima modificacion:</th>
                     <th class="titulos">fecha </th>
 
 
