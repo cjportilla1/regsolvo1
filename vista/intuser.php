@@ -218,7 +218,7 @@ function habilCont(campoCantidad)
 
                     # code...
                 }elseif ($_SESSION["perf"]=='supervisor') {
-                    include("intuservisual.inc");
+                    include("userintadm.inc");
                     # code...
                 }elseif ($_SESSION["perf"]=='colaborador') {
                     include("intuservisual.inc");

@@ -22,7 +22,7 @@ function loginUser() {
 			// Si al volver entero el resultado es 1, entonces se va a mi página de main:
 		
 			// console.log(res);
-			window.location = "vista/intuser.php";
+			window.location = "vista/qareg.php";
 		} else {
 
 			// Si no es posible convertirlo en numero, entonces me muestra lo que trae res (respuesta):

@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+// error_reporting(0);
 
 session_start();
 include("conexion.php");
@@ -12,7 +12,7 @@ $createcon->set_charset("utf8");
 // $hoy2=getdate() ;
 // print_r($hoy2);
 
-// print_r($hoy);
+print_r($_SESSION);
 
 
 if (empty($_SESSION["logged"])) {
@@ -183,10 +183,10 @@ if (empty($_SESSION["logged"])) {
                 include("qareg.inc");
 
                 # code...
-            }elseif ($_SESSION["perf"]=='visualizacion') {
-                include("anulvisual.inc");
-            }elseif ($_SESSION["perf"]=='camilo') {
-                include("modgobadm.inc");
+            }elseif ($_SESSION["perf"]=='supervisor') {
+                include("qavisual.inc");
+            }elseif ($_SESSION["perf"]=='colaborador') {
+                include("qavisual.inc");
             }
             
 

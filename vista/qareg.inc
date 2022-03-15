@@ -174,27 +174,9 @@
 
 <div class="container mt-5  ">
     <div class="container formulario1 imgs p-5">
-        <table id="tusuarios" class="  table-striped " width="100%" height="100%">
+      
 
-            <thead class=" ">
-                <tr class=" text-center fverde  fsolvo text-light">
-                <th class="titulos">eliminar</th>
-                <th class="titulos">Editar</th>
-                    <th class="titulos">Fecha</th>
-                   
-                    <th class="titulos">Inter ID</th>
-                    <th class="titulos">Name</th>
-                    <th class="titulos">TL</th>
-                    <th class="titulos">Score</th>
-                    <th class="titulos">Details</th>
-                  
-
-
-
-
-                </tr>
-            </thead>
-            <tbody>
+           
 
 
                 <?php
@@ -219,83 +201,203 @@
                 }
 
 
-                $sql = "call mostqa_reg";
+                if ($_SESSION["perf"]=="supervisor"||$_SESSION["perf"]=="colaborador") {
 
+                    $sql="call cons_user('".$_SESSION['solvid']."')";
 
-                $exe = $createcon->query($sql);
+                    $exe = $createcon->query($sql);
 
+                    while ($row = $exe->fetch_array()) {
 
-
-
-                while ($row = $exe->fetch_array()) {
-
-                   
-                    echo "<tr class='text-center texto ' >
-                        <td>  <a href='#' class='btn btn-rojo btn-sm fsolvo' onclick='confirmDeleteqareg(" . $row[0] . ");'>Eliminar</button></td>
-                        <td>
-                        <form action='' method='POST'>
-                        <input type='hidden' name='idqaregis' value='" . $row[0] . "'>
-                        <input type='hidden' name='fechareg' value='" . $row[1] . "'>
-                       <input type='hidden' name='interpid' value='" . $row[2] . "'>
-                       <input type='hidden' name='interpname' value='" . $row[3] . "'>
-                       <input type='hidden' name='tlnomb' value='" . $row[4] . "'>
-                       <input type='hidden' name='scoreqar' value='" . $row[5] . "'>
-                       <input type='hidden' name='comenta' value='" . $row[6] . "'>
-                       
-                   
-
-                       <input class='btn btn-verde btn-sm fsolvo' type='submit'  value='Editar/act' name='accion'>
-                       </form>
+                    echo "
+                    <table id='tusuarios' class='  table-striped ' width='100%' height='100%'>
                     
-                       </td>
+                    <thead class=' '>
+                    <tr class=' text-center fverde  fsolvo text-light'>
+                  
+                        <th class='titulos'>Fecha</th>
                        
-                            <td>" . $row[1] . "</td>
-                            <td>" . $row[2] . "</td>
-                         
-                           
-                            <td>" . $row[3] . "</td>
-                            <td>" . $row[4] . "</td>
-                            <td>" . $row[5] . "</td>
-                            <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalLong".$row[0]."'>
-                            Detalles de calificacion
-                          </button>
+                        <th class='titulos'>Inter ID</th>
+                        <th class='titulos'>Name</th>
+                        <th class='titulos'>TL</th>
+                        <th class='titulos'>Score</th>
+                        <th class='titulos'>Details</th>
+                        <th class='titulos'>Correo</th>
+                      
+    
+    
+    
+    
+                    </tr>
+                </thead>
+                <tbody><tr class='text-center texto ' >
+                              
+                               
+                    <td>" . $row[1] . "</td>
+                    <td>" . $row[2] . "</td>
+                 
+                   
+                    <td>" . $row[3] . "</td>
+                    <td>" . $row[4] . "</td>
+                    <td>" . $row[5] . "</td>
+                    <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalLong".$row[0]."'>
+                    Detalles de calificacion
+                  </button>
 
-                          <!-- Modal -->
-                          <div class='modal fade' id='exampleModalLong".$row[0]."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
-                            <div class='modal-dialog' role='document'>
-                              <div class='modal-content'>
-                                <div class='modal-header'>
-                                  <h5 class='modal-title' id='exampleModalLongTitle'>Detalles de la calificacion</h5>
-                                  <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                    <span aria-hidden='true'>&times;</span>
-                                  </button>
-                                </div>
-                                <div class='modal-body'>
-                                <textarea  class='form-control'  placeholder='Detalles' > ".$row[6]."  </textarea>   
-                          
-                                   
-                                             
-                          
-                                </div>
-                                <div class='modal-footer'>
-                                  <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                                
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                          
-                          
-                          
-                          
-                          </td>
-                          </tr>
-                          
+                  <!-- Modal -->
+                  <div class='modal fade' id='exampleModalLong".$row[0]."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
+                    <div class='modal-dialog' role='document'>
+                      <div class='modal-content'>
+                        <div class='modal-header'>
+                          <h5 class='modal-title' id='exampleModalLongTitle'>Detalles de la calificacion</h5>
+                          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                          </button>
+                        </div>
+                        <div class='modal-body'>
+                        <textarea  class='form-control'  placeholder='Detalles' > ".$row[6]."  </textarea>   
+                  
+                           
+                                     
+                  
+                        </div>
+                        <div class='modal-footer'>
+                          <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  </td>
+                 
+                  </tr>
+                  </div>
+
+
+                  </tbody>
+              
+              
+                  </table>
+                  
+                 
+                    ";
+                    }
+                 }else {
+                     # code...
+                     $sql = "call mostqa_reg";
+
+                     $exe = $createcon->query($sql);
+
+
+
+
+                     while ($row = $exe->fetch_array()) {
+     
+                        
+                         echo "
                          
-                            ";
-                
-                }
+                         <table id='tusuarios' class='  table-striped ' width='100%' height='100%'>
+                    
+                         <thead class=' '>
+                         <tr class=' text-center fverde  fsolvo text-light'>
+                       
+                             <th class='titulos'>Fecha</th>
+                            
+                             <th class='titulos'>Inter ID</th>
+                             <th class='titulos'>Name</th>
+                             <th class='titulos'>TL</th>
+                             <th class='titulos'>Score</th>
+                             <th class='titulos'>Details</th>
+                             <th class='titulos'>Correo</th>
+                           
+         
+         
+         
+         
+                         </tr>
+                     </thead>
+                     <tbody><tr class='text-center texto ' >
+                             <td>  <a href='#' class='btn btn-rojo btn-sm fsolvo' onclick='confirmDeleteqareg(" . $row[0] . ");'>Eliminar</button></td>
+                             <td>
+                             <form action='' method='POST'>
+                             <input type='hidden' name='idqaregis' value='" . $row[0] . "'>
+                             <input type='hidden' name='fechareg' value='" . $row[1] . "'>
+                            <input type='hidden' name='interpid' value='" . $row[2] . "'>
+                            <input type='hidden' name='interpname' value='" . $row[3] . "'>
+                            <input type='hidden' name='tlnomb' value='" . $row[4] . "'>
+                            <input type='hidden' name='scoreqar' value='" . $row[5] . "'>
+                            <input type='hidden' name='comenta' value='" . $row[6] . "'>
+                            
+                        
+     
+                            <input class='btn btn-verde btn-sm fsolvo' type='submit'  value='Editar/act' name='accion'>
+                            </form>
+                         
+                            </td>
+                            
+                                 <td>" . $row[1] . "</td>
+                                 <td>" . $row[2] . "</td>
+                              
+                                
+                                 <td>" . $row[3] . "</td>
+                                 <td>" . $row[4] . "</td>
+                                 <td>" . $row[5] . "</td>
+                                 <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalLong".$row[0]."'>
+                                 Detalles de calificacion
+                               </button>
+     
+                               <!-- Modal -->
+                               <div class='modal fade' id='exampleModalLong".$row[0]."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
+                                 <div class='modal-dialog' role='document'>
+                                   <div class='modal-content'>
+                                     <div class='modal-header'>
+                                       <h5 class='modal-title' id='exampleModalLongTitle'>Detalles de la calificacion</h5>
+                                       <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                                         <span aria-hidden='true'>&times;</span>
+                                       </button>
+                                     </div>
+                                     <div class='modal-body'>
+                                     <textarea  class='form-control'  placeholder='Detalles' > ".$row[6]."  </textarea>   
+                               
+                                        
+                                                  
+                               
+                                     </div>
+                                     <div class='modal-footer'>
+                                       <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                                     
+                                     </div>
+                                   </div>
+                                 </div>
+                               </div>
+                               
+                               
+                               
+                               
+                               
+                               </td>
+                               </tr>
+                               </div>
+
+
+                               </tbody>
+                           
+                           
+                               </table>
+                               
+                              
+                                 ";
+                     
+                     }
+                 }
+
+
+              
 
 
 
@@ -305,13 +407,7 @@
                
 
 
-    </div>
-
-
-    </tbody>
-
-
-    </table>
+   
  
     
 

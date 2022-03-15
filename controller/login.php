@@ -33,6 +33,8 @@ if (isset($_POST['btnlogin'])){
         $_SESSION["usapell"]=$res[3];
         $_SESSION["perf"]='admin';
         $_SESSION["logged"]=1;
+        $_SESSION["solvid"]=$res[5];
+
         echo "1";
 
         // print_r($res[0]);
@@ -45,6 +47,7 @@ if (isset($_POST['btnlogin'])){
             $_SESSION["usapell"]=$res[3];
             $_SESSION["perf"]='supervisor';
             $_SESSION["logged"]=1;
+            $_SESSION["solvid"]=$res[5];
             echo "1";
     
             break;
@@ -55,6 +58,7 @@ if (isset($_POST['btnlogin'])){
                 $_SESSION["usapell"]=$res[3];
                 $_SESSION["perf"]='colaborador';
                 $_SESSION["logged"]=1;
+                $_SESSION["solvid"]=$res[5];
                 echo "1";
        
        default:
