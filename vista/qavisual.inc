@@ -14,6 +14,7 @@
                     <th class="titulos">Score</th>
                     <th class="titulos">Details</th>
                   
+                  
 
 
 
@@ -44,8 +45,8 @@
                     // }
                 }
 
-                    if ($_SESSION["perf"]="supervisor") {
-                       $sql="call cons_user('".$_SESSION['SOLVID']."')";
+                    
+                       $sql="call cons_user('".$_SESSION['solvid']."')";
 
                        $exe = $createcon->query($sql);
 
@@ -55,126 +56,50 @@
                        while ($row = $exe->fetch_array()) {
        
                           
-                           echo "<tr class='text-center texto ' >
-                             
-                              
-                                   <td>" . $row[1] . "</td>
-                                   <td>" . $row[2] . "</td>
-                                
-                                  
-                                   <td>" . $row[3] . "</td>
-                                   <td>" . $row[4] . "</td>
-                                   <td>" . $row[5] . "</td>
-                                   <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalLong".$row[0]."'>
-                                   Detalles de calificacion
-                                 </button>
-       
-                                 <!-- Modal -->
-                                 <div class='modal fade' id='exampleModalLong".$row[0]."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
-                                   <div class='modal-dialog' role='document'>
-                                     <div class='modal-content'>
-                                       <div class='modal-header'>
-                                         <h5 class='modal-title' id='exampleModalLongTitle'>Detalles de la calificacion</h5>
-                                         <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                           <span aria-hidden='true'>&times;</span>
-                                         </button>
-                                       </div>
-                                       <div class='modal-body'>
-                                       <textarea  class='form-control'  placeholder='Detalles' > ".$row[6]."  </textarea>   
-                                 
-                                          
-                                                    
-                                 
-                                       </div>
-                                       <div class='modal-footer'>
-                                         <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
-                                       
-                                       </div>
-                                     </div>
-                                   </div>
-                                 </div>
-                                 
-                                 
-                                 
-                                 
-                                 
-                                 </td>
-                                 </tr>
-                                 
-                                
-                                   ";
+                        echo "<tr class='text-center texto ' >
                        
-                       }
-
-                    }elseif ($_SESSION["perf"]="colaborador") {
-                        
-                        $sql="call mostqa_reg";
-
-                        $exe = $createcon->query($sql);
- 
- 
- 
- 
-                        while ($row = $exe->fetch_array()) {
-        
+                       
+                            <td>" . $row[1] . "</td>
+                            <td>" . $row[2] . "</td>
+                         
                            
-                            echo "<tr class='text-center texto ' >
+                            <td>" . $row[3] . "</td>
+                            <td>" . $row[4] . "</td>
+                            <td>" .$row[5]. "</td>
+                           
+                            <td><button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal".$row[0]."'>Detalles calificacion</button>
+
+                            <div class='modal fade bd-example-modal-lg' id='myModal".$row[0]."' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true'>
+                              <div class='modal-dialog modal-lg'>
+                                <div class='modal-content'>
+                                <textarea  class='form-control'  placeholder='Detalles' > ".$row[6]."  </textarea>   
+                                <div class='modal-footer'>
+                                <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                             
+                              </div>
+                                </div>
                               
-                               
-                                    <td>" . $row[1] . "</td>
-                                    <td>" . $row[2] . "</td>
-                                 
-                                   
-                                    <td>" . $row[3] . "</td>
-                                    <td>" . $row[4] . "</td>
-                                    <td>" . $row[5] . "</td>
-                                    <td> <button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalLong".$row[0]."'>
-                                    Detalles de calificacion
-                                  </button>
-        
-                                  <!-- Modal -->
-                                  <div class='modal fade' id='exampleModalLong".$row[0]."' tabindex='-1' role='dialog' aria-labelledby='exampleModalLongTitle' aria-hidden='true'>
-                                    <div class='modal-dialog' role='document'>
-                                      <div class='modal-content'>
-                                        <div class='modal-header'>
-                                          <h5 class='modal-title' id='exampleModalLongTitle'>Detalles de la calificacion</h5>
-                                          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-                                            <span aria-hidden='true'>&times;</span>
-                                          </button>
-                                        </div>
-                                        <div class='modal-body'>
-                                        <textarea  class='form-control'  placeholder='Detalles' > ".$row[6]."  </textarea>   
-                                  
-                                           
-                                                     
-                                  
-                                        </div>
-                                        <div class='modal-footer'>
-                                          <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                              
+                              </div>
+                     
+                             
+
+                            </div>
                                         
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  
-                                  
+                                     
+                                   
                                   
                                   
                                   
                                   </td>
-                                  </tr>
-                                  
-                                 
-                                    ";
-                        
-                        }
-                        # code...
-                    }
-                      
-           
+
+                         
+                            </tr>";
+                       
+                 
 
 
-               
+                       }
 
 
 
@@ -193,12 +118,6 @@
     </table>
  
     
-    <div class="form-row-12">
-        <div class="col">
-        <mark> <a href="cerrarsesion.php" class="text-danger btn btn-warning">Cerrar sesión</a> </mark>
-        </div>
-         
-         
-        </div>
+   
 
 </div>

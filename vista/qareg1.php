@@ -12,12 +12,12 @@ $createcon->set_charset("utf8");
 // $hoy2=getdate() ;
 // print_r($hoy2);
 
-// print_r($hoy);
+// print_r($_SESSION);
+
 
 if (empty($_SESSION["logged"])) {
     header("location:cerrarsesion.php");
 }
-
 
 
 
@@ -35,7 +35,7 @@ if (empty($_SESSION["logged"])) {
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Assets astorga</title>
+    <title>Registros de QA</title>
     <link rel="stylesheet" href=" ../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/formulario.css">
   
@@ -180,13 +180,13 @@ if (empty($_SESSION["logged"])) {
             <?php
 
             if ($_SESSION["perf"] == 'admin') {
-                include("assets.inc");
+                include("qareg1.inc");
 
                 # code...
-            }elseif ($_SESSION["perf"]=='visualizacion') {
-                include("anulvisual.inc");
-            }elseif ($_SESSION["perf"]=='camilo') {
-                include("modgobadm.inc");
+            }elseif ($_SESSION["perf"]=='supervisor') {
+                include("qavisual.inc");
+            }elseif ($_SESSION["perf"]=='colaborador') {
+                include("qavisual.inc");
             }
             
 

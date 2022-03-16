@@ -57,6 +57,8 @@
 
         <div class="form-row">
             <div class="col-6">
+            <label for="inputd"><span class="font-weight-bold titulos">SolvoID</span></label>
+                <input name="solide" type="text"  class="form-control" id="inputsolid" placeholder="Solvo ID" minlength="8" maxlength="30" value="<?php echo $_POST["solvide"]; ?>"> 
 
             </div>
 
@@ -230,6 +232,8 @@
                     <th class="titulos">Mail</th>
                     <th class="titulos">Pass</th>
                     <th class="titulos">Rol</th>
+                    <th class="titulos">Sol ID</th>
+                    <th class="titulos">Last login</th>
 
 
 
@@ -299,6 +303,8 @@
                        <input type='hidden' name='correouit' value='" . $row[3] . "'>
                        <input type='hidden' name='contrasena' value='" . $row[4] . "'>
                        <input type='hidden' name='idrol' value='" . $row[5] . "'>
+                       <input type='hidden' name='solvide' value='" . $row[6] . "'>
+                       
                        
                    
 
@@ -314,6 +320,8 @@
                             <td>" . $row[3] . "</td>
                             <td>" . $row[4] . "</td>
                             <td>" . $showrol . "</td>
+                            <td>" . $row[6] . "</td>
+                            <td>" . $row[7] . "</td>
                          
                             </tr>";
                 }

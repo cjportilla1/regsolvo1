@@ -15,7 +15,7 @@ $createcon->set_charset("utf8");
 // print_r($_POST);
 
 
-if (empty($_SESSION["logged"])) {
+if (empty($_SESSION["logged"])){
     header("location:cerrarsesion.php");
 }
 
@@ -218,7 +218,7 @@ function habilCont(campoCantidad)
 
                     # code...
                 }elseif ($_SESSION["perf"]=='supervisor') {
-                    include("userintadm.inc");
+                    include("intuservisual.inc");
                     # code...
                 }elseif ($_SESSION["perf"]=='colaborador') {
                     include("intuservisual.inc");
