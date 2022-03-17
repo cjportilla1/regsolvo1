@@ -57,8 +57,8 @@
 
         <div class="form-row">
             <div class="col-6">
-            <label for="inputd"><span class="font-weight-bold titulos">SolvoID</span></label>
-                <input name="solide" type="text"  class="form-control" id="inputsolid" placeholder="Solvo ID" minlength="8" maxlength="30" value="<?php echo $_POST["solvide"]; ?>"> 
+            <label for="inputd"><span class="font-weight-bold titulos">Interpreter ID</span></label>
+                <input name="solide" type="text"  class="form-control" id="inputsolid" placeholder="Interpreter ID" minlength="8" maxlength="30" value="<?php echo $_POST["solvide"]; ?>"> 
 
             </div>
 
@@ -91,8 +91,7 @@
                       echo"  <option value='1'>Administrador</option>";
                        echo" <option value='2'>Supervisor</option>";
                        echo" <option value='3'>Colaborador</option>";
-                       echo" <option value='4'>Practicante IT</option>";
-                       echo" <option value='5'>Visualización</option>";
+                    
                         # code...
                     } else {
 
@@ -101,8 +100,7 @@
                        
                             echo" <option value='2'>Supervisor</option>";
                             echo" <option value='3'>Colaborador</option>";
-                            echo" <option value='4'>Practicante IT</option>";
-                            echo" <option value='5'>Visualización</option>";
+                         
                             # code...
                         }else if ($_POST["idrol"]==2) {
                             # code...
@@ -111,31 +109,14 @@
                             echo"  <option value='1'>Administrador</option>";
                          
                             echo" <option value='3'>Colaborador</option>";
-                            echo" <option value='4'>Practicante IT</option>";
-                            echo" <option value='5'>Visualización</option>";
+                          
                        
                             # code...
                         }elseif ($_POST["idrol"]==3) {
                             echo "<option value='" . $_POST["idrol"] . "'>Colaborador</option> ";
                             echo" <option value='2'>Supervisor</option>";
                             echo"  <option value='1'>Administrador</option>";
-                            echo" <option value='4'>Practicante IT</option>";
-                            echo" <option value='5'>Visualización</option>";
-                            # code...
-                        }elseif ($_POST["idrol"]==4) {
-                            echo "<option value='" . $_POST["idrol"] . "'>Practicante IT</option> ";
-                            echo" <option value='2'>Supervisor</option>";
-                            echo" <option value='3'>Colaborador</option>";
-                            echo"  <option value='1'>Administrador</option>";
-                            echo" <option value='5'>Visualización</option>";
-                            # code...
-                        }elseif ($_POST["idrol"]==5) {
-                            echo "<option value='" . $_POST["idrol"] . "'>Visualizacion</option> ";
-                            echo" <option value='2'>Supervisor</option>";
-                            echo" <option value='3'>Colaborador</option>";
-                            echo" <option value='4'>Practicante IT</option>";
-                            echo"  <option value='1'>Administrador</option>";
-                 
+                          
                             # code...
                         }
                        
@@ -230,7 +211,7 @@
                     <th class="titulos">Nombre</th>
                     <th class="titulos">Apellido</th>
                     <th class="titulos">Mail</th>
-                    <th class="titulos">Pass</th>
+                   
                     <th class="titulos">Rol</th>
                     <th class="titulos">Sol ID</th>
                     <th class="titulos">Last login</th>
@@ -318,7 +299,7 @@
                          
                            
                             <td>" . $row[3] . "</td>
-                            <td>" . $row[4] . "</td>
+                          
                             <td>" . $showrol . "</td>
                             <td>" . $row[6] . "</td>
                             <td>" . $row[7] . "</td>

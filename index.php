@@ -3,6 +3,7 @@
 include("vista/conexion.php");
 session_start();
 
+
 ?>
 <meta charset="UTF-8">
 <html>
@@ -11,7 +12,7 @@ session_start();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content=" initial-scale=1">
-    <title>Solvo</title>
+    <title>Cyracom Intranet module</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <link rel="stylesheet" href="css\login.css">
@@ -45,7 +46,7 @@ session_start();
 
 <!-- Outer Row -->
 
-            <h2 class="text-center verde titulos">Modulo interno Solvo IT</h2>
+            
 
 <div class="row justify-content-center ">
 
@@ -59,7 +60,7 @@ session_start();
           <div class="col-lg-6">
             <div class="p-5">
               <div class="text-center">
-              
+          
               </div>
               <form class="user" id="formLogin" method="POST">
                 <div class="form-group">

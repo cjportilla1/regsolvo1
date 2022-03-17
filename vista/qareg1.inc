@@ -62,6 +62,10 @@
                      echo "   <option value='Jose Sevillano'>Jose Sevillano</option>";
                      echo "   <option value='Sebastian Sanchez'>Sebastian Sanchez</option>";
                      echo " <option value='Silvino Navarro'>Silvino Navarro</option>";
+                     echo " <option value='Flavio Paba'>Flavio Paba</option>";
+                     echo " <option value='Aurys Alvarado'>Aurys Alvarado</option>";
+                     echo " <option value='Javier Padilla'>Javier Padilla</option>";
+                     echo " <option value='Rogelio Morales'>Rogelio Morales</option>";
                     
                     
                     }else {
@@ -70,7 +74,10 @@
                         echo "   <option value='Jose Sevillano'>Jose Sevillano</option>";
                         echo "   <option value='Sebastian Sanchez'>Sebastian Sanchez</option>";
                         echo " <option value='Silvino Navarro'>Silvino Navarro</option>";
-                   
+                        echo " <option value='Flavio Paba'>Flavio Paba</option>";
+                        echo " <option value='Aurys Alvarado'>Aurys Alvarado</option>";
+                        echo " <option value='Javier Padilla'>Javier Padilla</option>";
+                        echo " <option value='Rogelio Morales'>Rogelio Morales</option>";
                    
                     }
                     ?>
@@ -201,14 +208,14 @@
 
                 if (isset($_GET['eliminar'])) {
 
-                    $sqlDelete = "call del_qareg(" . $_GET['id'] . ")";
+                    $sqlDelete = "call del_qareg(".$_GET['id'].")";
                     $res = $createcon->query($sqlDelete);
 
 
                     // while ($fila = $res->fetch_array()) {
-                    $fila = $res->fetch_row();
+                    // $fila = $res->fetch_row();
 
-                    // print_r($fila);
+                    // // print_r($fila);
 
                     // if ($row[0]=1) {
                     //     echo "<label class='text-danger' >usuario eliminado correctamente</label>";
@@ -231,7 +238,7 @@
 
                 
                     echo "<tr class='text-center texto ' >
-                        <td>  <a href='#' class='btn btn-rojo btn-sm fsolvo' onclick='confirmDeleteUint(" . $row[0] . ");'>Eliminar</button></td>
+                        <td>  <a href='#' class='btn btn-rojo btn-sm fsolvo' onclick='confirmDeleteqareg(" . $row[0] . ");'>Eliminar</button></td>
                         <td>
                         <form action='' method='POST'>
                         <input type='hidden' name='idqaregis' value='" . $row[0] . "'>
