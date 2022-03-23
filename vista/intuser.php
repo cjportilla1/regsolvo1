@@ -19,6 +19,7 @@ $createcon->set_charset("utf8");
 if (empty($_SESSION["logged"])){
     header("location:cerrarsesion.php");
 }
+date_default_timezone_set('Etc/GMT-5');
 
 ?>
 

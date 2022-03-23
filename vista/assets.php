@@ -40,7 +40,7 @@ if (empty($_SESSION["logged"])) {
     <link rel="stylesheet" href="../css/formulario.css">
   
     <link rel="stylesheet" href="../css/fuente.css">
-    <link rel="shortcut icon" href="../assets/img/titleem.ico">
+    <link rel="shortcut icon" href="../assets/img/solvoico.ico">
     <link rel="stylesheet" href="../assets/fontawesome-free-5.15.1-web/css/all.css">
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 

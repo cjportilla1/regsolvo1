@@ -2,7 +2,7 @@
 <?php
 include("vista/conexion.php");
 session_start();
-
+date_default_timezone_set('Etc/GMT-5');
 
 ?>
 <meta charset="UTF-8">

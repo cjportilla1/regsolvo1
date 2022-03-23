@@ -32,8 +32,8 @@
             </div>
 
             <div class="form-group col">
-                <label for=""><span class="font-weight-bold titulos">Interpreter ID</span></label>
-                <input name="interpidfe" type="text" class="form-control" id="apellid" placeholder="ID del interprete"  value="<?php echo $_POST["interpid"]; ?>">
+                <label for=""><span class="font-weight-bold titulos">Sol ID</span></label>
+                <input name="interpidfe" type="text" class="form-control" id="apellid" placeholder="Sol Id interprete"  value="<?php echo $_POST["interpid"]; ?>">
             </div>
 
 
@@ -189,7 +189,7 @@
         <th class="titulos">Eliminar</th>
         <th class="titulos">Editar</th>
         <th class="titulos">Fecha</th>
-        <th class="titulos">Inter ID</th>
+        <th class="titulos">Sol ID</th>
         <th class="titulos">Inter Name</th>
         <th class="titulos">TL name</th>
         <th class="titulos">Score</th>
